@@ -7,53 +7,182 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>STEM Planner</h1>
-    <p class="subtitle">Michael Wang · Grade 10</p>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>STEM Planner</h1>
+      <p class="quick-info">Michael Wang · Grade 10</p>
+    </div>
+
     <nav>
       <a href="index.html">Overview</a>
-      <a href="choose-classes.html">Choose Classes</a>
-      <a href="classes.html">Past Courses</a>
+      <a href="classes.html">Classes</a>
       <a href="suggestions.html">Suggestions</a>
       <a href="requirements.html" class="active">Requirements</a>
+      <a href="qualitycredit.html">Quality Credit</a>
     </nav>
-  </header>
+  </aside>
 
-  <main>
-    <section class="card">
-      <h2>Graduation Requirements (Credits)</h2>
-      <ul class="requirements">
-        <li class="done">4 credits English</li>
-        <li class="done">4 credits Math</li>
-        <li class="done">3 credits Science</li>
-        <li class="not-done">2 credits Foreign Language</li>
-        <li class="not-done">4 Electives</li>
-      </ul>
-    </section>
+  <div class="content">
+    <main>
+      <div class="page-header">
+        <div>
+          <h2>Requirements</h2>
+          <h3>Track graduation, STEM Scholar, and honors progress</h3>
+        </div>
+      </div>
 
-    <section class="card">
-      <h2>Required Classes for Graduation</h2>
-      <ul class="requirements">
-        <li class="done">English I</li>
-        <li class="done">English II</li>
-        <li class="done">Algebra I</li>
-        <li class="done">Algebra II</li>
+      <section class="requirements-summary">
+        <div class="summary-card">
+          <span class="summary-label">Graduation</span>
+          <strong>14 / 24</strong>
+          <p>credits completed</p>
+        </div>
 
-        <li class="done">Biology</li>
-        <li class="not-done">World History</li>
-      </ul>
-    </section>
+        <div class="summary-card">
+          <span class="summary-label">STEM Scholar</span>
+          <strong>5 / 6</strong>
+          <p>requirements completed</p>
+        </div>
 
-    <section class="card">
-      <h2>STEM Scholar with Honors Requirements</h2>
-      <ul class="requirements">
-        <li class="done">4 years Math</li>
-        <li class="done">4 years Science</li>
-        <li class="done">1 Computer Science course</li>
-        <li class="not-done">3 Honors or AP STEM courses</li>
-        <li class="not-done">Research project or capstone</li>
-      </ul>
-    </section>
-  </main>
+        <div class="summary-card">
+          <span class="summary-label">Honors Track</span>
+          <strong>3 left</strong>
+          <p>requirements remaining</p>
+        </div>
+      </section>
+
+      <section class="card requirement-progress-card">
+        <div class="section-header">
+          <div>
+            <span class="section-label">Overall Progress</span>
+            <h4>STEM Recognition Pathway</h4>
+          </div>
+        </div>
+
+        <div class="milestone-row">
+          <span class="milestone completed">STEM</span>
+          <span class="milestone completed">STEM Scholar</span>
+          <span class="milestone">STEM Scholar with Honors</span>
+        </div>
+      </section>
+
+      <section class="requirement-grid">
+        <div class="card requirement-category">
+          <div class="category-header">
+            <div>
+              <span class="section-label">Graduation</span>
+              <h4>Credit Requirements</h4>
+            </div>
+          </div>
+
+          <div class="requirement-list">
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>English</strong>
+                <p>4 credits completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Math</strong>
+                <p>4 credits completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Science</strong>
+                <p>3 credits completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row pending">
+              <span class="check-icon">○</span>
+              <div>
+                <strong>Foreign Language</strong>
+                <p>2 credits needed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row pending">
+              <span class="check-icon">○</span>
+              <div>
+                <strong>Electives</strong>
+                <p>4 credits needed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card requirement-category">
+          <div class="category-header">
+            <div>
+              <span class="section-label">Required Courses</span>
+              <h4>Core Classes</h4>
+            </div>
+          </div>
+
+          <div class="requirement-list">
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>English I & II</strong>
+                <p>Completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Algebra I & II</strong>
+                <p>Completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Biology</strong>
+                <p>Completed</p>
+              </div>
+            </div>
+
+            <div class="requirement-row pending">
+              <span class="check-icon">○</span>
+              <div>
+                <strong>World History</strong>
+                <p>Still needed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        <div class="card requirement-category wide-card">
+          <div class="category-header">
+            <div>
+              <span class="section-label">STEM Scholar with Honors</span>
+              <h4>Requirements</h4>
+            </div>
+          </div>
+
+          <div class="requirement-list">
+            <div class="requirement-row completed">
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>4 Years of Math</strong>
+                <p>Completed</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+     
+    </main>
+  </div>
 </body>
 </html>

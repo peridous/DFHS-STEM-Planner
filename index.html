@@ -7,21 +7,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>STEM Planner</h1>
-    <p class="subtitle">Michael Wang · Grade 10</p>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>STEM Planner</h1>
+      <p class="quick-info">Michael Wang · Grade 10</p>
+    </div>
     <nav>
       <a href="index.html" class="active">Overview</a>
-      <a href="choose-classes.html"> Choose Classes</a>
-      <a href="classes.html">Past Courses</a>
+      <a href="classes.html">Classes</a>
       <a href="suggestions.html">Suggestions</a>
       <a href="requirements.html">Requirements</a>
-    </nav>
-  </header>
+      <a href="qualitycredit.html">Quality Credit</a>
 
+    </nav>
+  </aside>
+
+  <div class="content">
   <main>
-    <section class="card">
-      <h2>Student Overview</h2>
+    <h2>Student Overview</h2>
+    <h3>View your credits, requirements, and more</h3>
+    <h2 class = notification>Sigma Sigma is due tommorow</h2>
+    <section>
       <div class="overview-grid">
         <div class="overview-item">
           <span class="overview-label">Name</span>
@@ -41,17 +47,37 @@
         </div>
       </div>
     </section>
-
+    <section class = "overview-class">
+      <a class = "link-card" href = "classes.html">
+        <span class = "link-card-label">Classes</span>
+        <h4>Current & Previous Classes</h4>
+        <p>View your classes with built-in analysis and statistics.</p>
+      </a> 
+      <a class = "link-card" href = "suggestions.html"> 
+        <span class = "link-card-label">Upcoming</span>
+        <h4>Future Classes</h4>
+        <p>View possible recommendations, personalized for you.</p>
+      </a>
+    </section>
     <section class="card progress-card">
-      <h2>Progress</h2>
-      <div class="progress-track">
-        <div class="progress-step completed">STEM</div>
-        <div class="progress-step completed">STEM Scholar</div>
-        <div class="progress-step">STEM Scholar with Honors</div>
+      <h5>Progress</h5>
+        <div class="milestone-row">
+          <span class="milestone completed">STEM</span>
+          <span class="milestone completed">STEM Scholar</span>
+          <span class="milestone">STEM Scholar with Honors</span>
       </div>
+      <a class="text-link" href="requirements.html">View more indepth →</a>
+    </section>
+    <section class = "card">
+      <h5>Quality Credit · Due 67/67/67</h5>
+      <p class = "qc-description">
+        The Quality Credit requirement for the STEM program is designed to provide opportunities for students to learn about the contributions they can make to the community and to further develop their leadership skills.
+      </p>
+      <a class = "text-link" href = "qualitycredit.html">Write your Quality Credit</a>
     </section>
 
 
   </main>
+  </div>
 </body>
 </html>

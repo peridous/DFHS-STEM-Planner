@@ -7,19 +7,27 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>STEM Planner</h1>
-    <p class="subtitle">Michael Wang · Grade 10</p>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>STEM Planner</h1>
+      <p class="quick-info">Michael Wang · Grade 10</p>
+    </div>
     <nav>
       <a href="index.html">Overview</a>
-      <a href="choose-classes.html">Choose Classes</a>
-      <a href="classes.html">Past Courses</a>
+      <a href="classes.html">Classes</a>
       <a href="suggestions.html" class="active">Suggestions</a>
       <a href="requirements.html">Requirements</a>
-    </nav>
-  </header>
+      <a href="qualitycredit.html">Quality Credit</a>
 
+    </nav>
+  </aside>
+
+  <div class="content">
   <main>
+  <h2>Suggestions</h2>
+  <h3>Personalized recommendations for future classes, pathways, and activities</h3>
+  <div class = "suggestions-grid">
+
     <section class="card suggestions">
       <h2>Many top students take</h2>
       <ul>
@@ -31,13 +39,43 @@
       </ul>
     </section>
     <section class="card suggestions">
-      <h2>Students in your subject area took</h2>
+      <h2>Because you took: </h2>
       <ul>
         <li class="suggestion">Honors Physics → AP Physics</li>
         <li class="suggestion">AP Pre-Calculus → AP Calculus</li>
         <li class="suggestion">AP Chemistry</li>
       </ul>
     </section>
+    <section class = "card suggestions">
+      <h2>STEM Pathway Suggestions</h2>
+      <div class = "card">
+        <div>
+          <strong>Engineering Pathway</strong>
+          <p>Ap Calculus BC, AP Physics C<p>
+        </div>
+      </div>
+    </section>
+    <section class = "card suggestions">
+      <h2>Sample Schedule</h2>
+      <p class = "schedule-warning">Warning: This schedule is rigorous and the estimated workload is <strong>5+ hours a day.</strong></p>
+    </section>
+  </div>
+  <section class = "card">
+    <h2>Activities</h2>
+    <p>Clubs and extracurriculars are important because they show long-term interest, leadership, and involvement outside the classroom.</p>
+    <div class="suggestions-grid">
+      <div class="suggestions-item">
+        <strong>Math Team</strong>
+        <p>Good for competition experience and advanced problem solving.</p>
+      </div>
+      <div class="suggestions-item">
+        <strong>Goon Team</strong>
+        <p>Good for goon goon goon.</p>
+      </div>
+    </div>
+  </section>
   </main>
+  </div>
+  
 </body>
 </html>

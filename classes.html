@@ -7,29 +7,80 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>STEM Planner</h1>
-    <p class="subtitle">Michael Wang · Grade 10</p>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>STEM Planner</h1>
+      <p class="quick-info">Michael Wang · Grade 10</p>
+    </div>
     <nav>
       <a href="index.html">Overview</a>
-      <a href="choose-classes.html">Choose Classes</a>
-      <a href="classes.html" class="active">Past Courses</a>
+      <a href="classes.html" class="active">Classes</a>
       <a href="suggestions.html">Suggestions</a>
       <a href="requirements.html">Requirements</a>
-    </nav>
-  </header>
+      <a href="qualitycredit.html">Quality Credit</a>
 
-  <main>
-    <section class="card">
-      <h2>Classes Taken</h2>
-      <ul class="class-list">
-        <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
-        <li><span class="class-name">Honors Physics</span> <span class="tag-honors">Honors</span></li>
-        <li><span class="class-name">AP Pre-Calculus</span> <span class="tag-ap">AP</span></li>
-        <li><span class="class-name">AP Chemistry</span> <span class="tag-ap">AP</span></li>
-        <li><span class="class-name">Masterclass Orchestra</span> <span class="tag-other">Other</span></li>
-      </ul>
+    </nav>
+  </aside>
+
+  <div class="content">
+  <main class="classes-page">
+    <h2>Classes</h2>
+    <h3>Manage and view your classes with personalized analysis</h3>
+    <div class="classes-row">
+      <section class="card">
+        <h2>Completed Courses</h2>
+        <ul class="class-list">
+          <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
+          <li><span class="class-name">Honors Physics</span> <span class="tag-honors">Honors</span></li>
+          <li><span class="class-name">AP Chemistry</span> <span class="tag-ap">AP</span></li>
+          <li><span class="class-name">Masterclass Orchestra</span> <span class="tag-other">Other</span></li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Currently Enrolled</h2>
+        <ul class="class-list">
+          <li><span class="class-name">AP Pre-Calculus</span> <span class="tag-ap">AP</span></li>
+          <li><span class="class-name">STEM Computer Programming 1 HN</span> <span class="tag-honors">Honors</span></li>
+          <li><span class="class-name">Algebra 2</span> <span class="tag-other">Other</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card all-courses-card">
+      <h2>All Courses</h2>
+      <div class="courses-by-subject">
+        <div class="subject-block">
+          <h3>Science</h3>
+          <ul class="class-list">
+            <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
+            <li><span class="class-name">Chemistry</span> <span class="tag-other">Other</span></li>
+            <li><span class="class-name">AP Physics C</span> <span class="tag-ap">AP</span></li>
+            <li><span class="class-name">AP Environmental Science</span> <span class="tag-ap">AP</span></li>
+            <li><span class="class-name">Biology 1 HN</span> <span class="tag-honors">Honors</span></li>
+            <li><span class="class-name">Biology 1</span> <span class="tag-other">Other</span></li>
+          </ul>
+        </div>
+        <div class="subject-block">
+          <h3>Tech</h3>
+          <ul class="class-list">
+            <li><span class="class-name">STEM Computer Programming 1 HN</span> <span class="tag-honors">Honors</span></li>
+            <li><span class="class-name">AP Computer Science - Principles</span> <span class="tag-ap">AP</span></li>
+            <li><span class="class-name">Game Design HN</span> <span class="tag-honors">Honors</span></li>
+            <li><span class="class-name">Biosystems Technology 1 HN</span> <span class="tag-honors">Honors</span></li>
+            <li><span class="class-name">Aerospace Science 3</span> <span class="tag-other">Other</span></li>
+          </ul>
+        </div>
+        <div class="subject-block">
+          <h3>Math</h3>
+          <ul class="class-list">
+            <li><span class="class-name">Algebra 1 HN</span> <span class="tag-honors">Honors</span></li>
+            <li><span class="class-name">Algebra 2</span> <span class="tag-other">Other</span></li>
+            <li><span class="class-name">Vector Calculus</span> <span class="tag-other">Other</span></li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
+  </div>
 </body>
 </html>
