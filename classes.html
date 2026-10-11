@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classes — STEM Planner</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <aside class="sidebar">
@@ -25,12 +26,11 @@
   <div class="content">
   <main class="classes-page">
     <h2>Classes</h2>
-    <h3>Manage and view your classes with personalized analysis</h3>
+    <h3>Review completed courses, current enrollment, and available classes</h3>
     <div class="classes-row">
       <section class="card">
         <div class = "card-header">
         <h2>Completed Courses</h2>
-        <span class = "class-pill">Add Course</span>
         </div>
         <ul class="class-list">
           <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
@@ -42,7 +42,6 @@
       <section class="card">
         <div class = "card-header">
         <h2>Currently Enrolled</h2>
-        <span class = "class-pill">Add Course</span>
         </div>
         <ul class="class-list">
           <li><span class="class-name">AP Pre-Calculus</span> <span class="tag-ap">AP</span></li>
@@ -54,6 +53,9 @@
 
     <section class="card all-courses-card">
       <h2>All Courses</h2>
+      <label for="course-search">Search courses</label>
+      <input type="search" id="course-search" placeholder="Enter a course name">
+      <p id="course-results" role="status"></p>
       <div class="courses-by-subject">
         <div class="subject-block">
           <h3>Science</h3>
