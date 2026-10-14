@@ -1,81 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suggestions — STEM Planner</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1>STEM Planner</h1>
-      <p class="quick-info">Michael Wang · Grade 10</p>
-    </div>
-    <nav>
-      <a href="index.html">Overview</a>
-      <a href="classes.html">Classes</a>
-      <a href="suggestions.html" class="active">Suggestions</a>
-      <a href="requirements.html">Requirements</a>
-      <a href="qualitycredit.html">Quality Credit</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestions — STEM Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/suggestions.js"></script>
+  </head>
+  <body class="planner-view">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>STEM Planner</h1>
+        <p class="quick-info">Michael Wang · Grade 10</p>
+      </div>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="classes.html">Classes</a>
+        <a href="suggestions.html" class="active" aria-current="page">Suggestions</a>
+        <a href="requirements.html">Requirements</a>
+        <a href="qualitycredit.html">Quality Credit</a>
+      </nav>
+    </aside>
 
-    </nav>
-  </aside>
-
-  <div class="content">
-  <main>
-  <h2>Suggestions</h2>
-  <h3>Explore future courses, STEM pathways, and activities</h3>
-  <div class = "suggestions-grid">
-
-    <section class="card suggestions">
-      <h2>Advanced Course Options</h2>
-      <ul>
-        <li class="suggestion">AP Calculus BC</li>
-        <li class="suggestion">AP Physics C</li>
-        <li class="suggestion">AP Computer Science A</li>
-       
-
-      </ul>
-    </section>
-    <section class="card suggestions">
-      <h2>Suggested Next Courses</h2>
-      <ul>
-        <li class="suggestion">Honors Physics → AP Physics</li>
-        <li class="suggestion">AP Pre-Calculus → AP Calculus</li>
-        <li class="suggestion">AP Chemistry</li>
-      </ul>
-    </section>
-    <section class = "card suggestions">
-      <h2>STEM Pathway Suggestions</h2>
-      <div class = "card">
-        <div>
-          <strong>Engineering Pathway</strong>
-          <p>AP Calculus BC, AP Physics C</p>
+    <div class="content">
+      <main class="suggestions-page">
+        <div class="suggestions-heading">
+          <div>
+            <h2>Suggestions</h2>
+            <h3>A few course ideas based on your classes and remaining requirements</h3>
+          </div>
+          <a class="text-link" id="planned-classes-link" href="classes.html">View planned classes →</a>
         </div>
-      </div>
-    </section>
-    <section class = "card suggestions">
-      <h2>Schedule Planning</h2>
-      <p class = "schedule-warning">Consider course workload alongside extracurricular activities. Discuss your planned schedule with your counselor.</p>
-    </section>
-  </div>
-  <section class = "card">
-    <h2>Activities</h2>
-    <p>Clubs and extracurriculars are important because they show long-term interest, leadership, and involvement outside the classroom.</p>
-    <div class="suggestions-grid">
-      <div class="suggestions-item">
-        <strong>Math Team</strong>
-        <p>Build problem-solving skills and gain experience in math competitions.</p>
-      </div>
-      <div class="suggestions-item">
-        <strong>Robotics Club</strong>
-        <p>Practice programming, engineering design, and teamwork through robotics projects.</p>
-      </div>
+        <p id="suggestion-message" role="status"></p>
+        <div class="suggestion-columns">
+          <section class="card suggestion-card" aria-labelledby="needed-heading">
+            <div class="card-header">
+              <h2 id="needed-heading">Classes you still need</h2>
+              <span class="class-pill" id="needed-suggestion-count">0</span>
+            </div>
+            <p class="suggestion-description">Fill gaps that aren't covered by the classes already in your list.</p>
+            <ul class="suggestion-list" id="needed-suggestions"></ul>
+          </section>
+          <section class="card suggestion-card" aria-labelledby="next-heading">
+            <div class="card-header">
+              <h2 id="next-heading">Next classes</h2>
+              <span class="class-pill" id="next-suggestion-count">0</span>
+            </div>
+            <p class="suggestion-description">Options that follow courses you've completed.</p>
+            <ul class="suggestion-list" id="next-suggestions"></ul>
+          </section>
+        </div>
+        <div class="suggestion-footer">
+          <p class="progress-note">Check course prerequisites before choosing. You can set school years and change class statuses on the Classes page.</p>
+          <a class="text-link" href="requirements.html">View requirements →</a>
+        </div>
+        <p class="progress-note" id="suggestion-catalog-status" role="status"></p>
+        <button type="button" class="course-button secondary-button" id="retry-suggestions" hidden>Retry loading courses</button>
+        <noscript>Enable JavaScript to see suggestions from your saved classes.</noscript>
+      </main>
     </div>
-  </section>
-  </main>
-  </div>
-  
-</body>
+  </body>
 </html>

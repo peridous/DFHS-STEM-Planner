@@ -1,188 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Requirements — STEM Planner</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1>STEM Planner</h1>
-      <p class="quick-info">Michael Wang · Grade 10</p>
-    </div>
-
-    <nav>
-      <a href="index.html">Overview</a>
-      <a href="classes.html">Classes</a>
-      <a href="suggestions.html">Suggestions</a>
-      <a href="requirements.html" class="active">Requirements</a>
-      <a href="qualitycredit.html">Quality Credit</a>
-    </nav>
-  </aside>
-
-  <div class="content">
-    <main>
-      <div class="page-header">
-        <div>
-          <h2>Requirements</h2>
-          <h3>Track graduation, STEM Scholar, and honors progress</h3>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements — STEM Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/student-progress.js"></script>
+  </head>
+  <body class="planner-view">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>STEM Planner</h1>
+        <p class="quick-info">Michael Wang · Grade 10</p>
       </div>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="classes.html">Classes</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="requirements.html" class="active" aria-current="page">Requirements</a>
+        <a href="qualitycredit.html">Quality Credit</a>
+      </nav>
+    </aside>
 
-      <section class="requirements-summary">
-        <div class="summary-card">
-          <span class="summary-label">Graduation</span>
-          <strong>14 / 24</strong>
-          <p>credits completed</p>
-        </div>
+    <div class="content">
+      <main>
+        <h2>Requirements</h2>
+        <h3>Track graduation, STEM Scholar, and honors progress</h3>
+        <p class="progress-note">Only completed classes count. These graduation targets match the original planner page.</p>
+        <p class="progress-note" id="progress-message" role="status"></p>
 
-        <div class="summary-card">
-          <span class="summary-label">STEM Scholar</span>
-          <strong>5 / 6</strong>
-          <p>requirements completed</p>
-        </div>
-
-        <div class="summary-card">
-          <span class="summary-label">Honors Track</span>
-          <strong>3 remaining</strong>
-          <p>requirements remaining</p>
-        </div>
-      </section>
-
-      <section class="card requirement-progress-card">
-        <div class="section-header">
-          <div>
-            <span class="section-label">Overall Progress</span>
-            <h4>STEM Recognition Pathway</h4>
+        <section class="requirements-summary">
+          <div class="summary-card">
+            <span class="summary-label">Graduation</span>
+            <strong id="graduation-total">0 / 24</strong>
+            <p id="graduation-state">credits completed</p>
           </div>
-        </div>
+          <div class="summary-card">
+            <span class="summary-label">STEM Scholar</span>
+            <strong id="scholar-total">0 / 1</strong>
+            <p id="scholar-state">requirements completed</p>
+          </div>
+          <div class="summary-card">
+            <span class="summary-label">Honors Track</span>
+            <strong id="honors-total">0 / 1</strong>
+            <p id="honors-state">requirements completed</p>
+          </div>
+        </section>
 
-        <div class="milestone-row">
-          <span class="milestone completed">STEM</span>
-          <span class="milestone completed">STEM Scholar</span>
-          <span class="milestone">STEM Scholar with Honors</span>
-        </div>
-      </section>
-
-      <section class="requirement-grid">
-        <div class="card requirement-category">
-          <div class="category-header">
+        <section class="card requirement-progress-card">
+          <div class="section-header">
             <div>
-              <span class="section-label">Graduation</span>
-              <h4>Credit Requirements</h4>
+              <span class="section-label">Overall Progress</span>
+              <h4>STEM Recognition Pathway</h4>
             </div>
           </div>
-
-          <div class="requirement-list">
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>English</strong>
-                <p>4 credits completed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>Math</strong>
-                <p>4 credits completed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>Science</strong>
-                <p>3 credits completed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row pending">
-              <span class="check-icon">○</span>
-              <div>
-                <strong>Foreign Language</strong>
-                <p>2 credits needed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row pending">
-              <span class="check-icon">○</span>
-              <div>
-                <strong>Electives</strong>
-                <p>4 credits needed</p>
-              </div>
-            </div>
+          <progress id="graduation-progress" max="24" value="0" aria-label="Graduation credits"></progress>
+          <div class="milestone-row" id="recognition-pathway">
+            <span class="milestone" data-track="stem">STEM</span>
+            <span class="milestone" data-track="scholar">STEM Scholar</span>
+            <span class="milestone" data-track="honors">STEM Scholar with Honors</span>
           </div>
-        </div>
+          <p class="progress-note" id="recognition-note"></p>
+        </section>
 
-        <div class="card requirement-category">
-          <div class="category-header">
-            <div>
-              <span class="section-label">Required Courses</span>
-              <h4>Core Classes</h4>
+        <section class="requirement-grid">
+          <div class="card requirement-category">
+            <div class="category-header">
+              <div>
+                <span class="section-label">Graduation</span>
+                <h4>Credit Requirements</h4>
+              </div>
             </div>
+            <div class="requirement-list" id="credit-requirements"></div>
           </div>
-
-          <div class="requirement-list">
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
+          <div class="card requirement-category">
+            <div class="category-header">
               <div>
-                <strong>English I & II</strong>
-                <p>Completed</p>
+                <span class="section-label">Required Courses</span>
+                <h4>Core Classes</h4>
               </div>
             </div>
-
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>Algebra I & II</strong>
-                <p>Completed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>Biology</strong>
-                <p>Completed</p>
-              </div>
-            </div>
-
-            <div class="requirement-row pending">
-              <span class="check-icon">○</span>
-              <div>
-                <strong>World History</strong>
-                <p>Not yet completed</p>
-              </div>
-            </div>
+            <div class="requirement-list" id="core-requirements"></div>
           </div>
-        </div>
-      </section>
-        <div class="card requirement-category wide-card">
+        </section>
+
+        <section class="card requirement-category">
           <div class="category-header">
             <div>
               <span class="section-label">STEM Scholar with Honors</span>
-              <h4>Requirements</h4>
+              <h4>Listed Requirements</h4>
             </div>
           </div>
-
-          <div class="requirement-list">
-            <div class="requirement-row completed">
-              <span class="check-icon">✓</span>
-              <div>
-                <strong>4 Years of Math</strong>
-                <p>Completed</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-     
-    </main>
-  </div>
-</body>
+          <div class="requirement-list" id="honors-requirements"></div>
+          <p class="progress-note">Choose a school year for each completed math class. A year counts after at least one math credit in grades 9–12.</p>
+        </section>
+        <noscript>Enable JavaScript to calculate progress from your completed classes.</noscript>
+      </main>
+    </div>
+  </body>
 </html>

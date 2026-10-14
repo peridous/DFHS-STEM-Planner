@@ -1,94 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classes — STEM Planner</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <h1>STEM Planner</h1>
-      <p class="quick-info">Michael Wang · Grade 10</p>
-    </div>
-    <nav>
-      <a href="index.html">Overview</a>
-      <a href="classes.html" class="active">Classes</a>
-      <a href="suggestions.html">Suggestions</a>
-      <a href="requirements.html">Requirements</a>
-      <a href="qualitycredit.html">Quality Credit</a>
-
-    </nav>
-  </aside>
-
-  <div class="content">
-  <main class="classes-page">
-    <h2>Classes</h2>
-    <h3>Review completed courses, current enrollment, and available classes</h3>
-    <div class="classes-row">
-      <section class="card">
-        <div class = "card-header">
-        <h2>Completed Courses</h2>
-        </div>
-        <ul class="class-list">
-          <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
-          <li><span class="class-name">Honors Physics</span> <span class="tag-honors">Honors</span></li>
-          <li><span class="class-name">AP Chemistry</span> <span class="tag-ap">AP</span></li>
-          <li><span class="class-name">Masterclass Orchestra</span> <span class="tag-other">Other</span></li>
-        </ul>
-      </section>
-      <section class="card">
-        <div class = "card-header">
-        <h2>Currently Enrolled</h2>
-        </div>
-        <ul class="class-list">
-          <li><span class="class-name">AP Pre-Calculus</span> <span class="tag-ap">AP</span></li>
-          <li><span class="class-name">STEM Computer Programming 1 HN</span> <span class="tag-honors">Honors</span></li>
-          <li><span class="class-name">Algebra 2</span> <span class="tag-other">Other</span></li>
-        </ul>
-      </section>
-    </div>
-
-    <section class="card all-courses-card">
-      <h2>All Courses</h2>
-      <label for="course-search">Search courses</label>
-      <input type="search" id="course-search" placeholder="Enter a course name">
-      <p id="course-results" role="status"></p>
-      <div class="courses-by-subject">
-        <div class="subject-block">
-          <h3>Science</h3>
-          <ul class="class-list">
-            <li><span class="class-name">AP Biology</span> <span class="tag-ap">AP</span></li>
-            <li><span class="class-name">Chemistry</span> <span class="tag-other">Other</span></li>
-            <li><span class="class-name">AP Physics C</span> <span class="tag-ap">AP</span></li>
-            <li><span class="class-name">AP Environmental Science</span> <span class="tag-ap">AP</span></li>
-            <li><span class="class-name">Biology 1 HN</span> <span class="tag-honors">Honors</span></li>
-            <li><span class="class-name">Biology 1</span> <span class="tag-other">Other</span></li>
-          </ul>
-        </div>
-        <div class="subject-block">
-          <h3>Tech</h3>
-          <ul class="class-list">
-            <li><span class="class-name">STEM Computer Programming 1 HN</span> <span class="tag-honors">Honors</span></li>
-            <li><span class="class-name">AP Computer Science - Principles</span> <span class="tag-ap">AP</span></li>
-            <li><span class="class-name">Game Design HN</span> <span class="tag-honors">Honors</span></li>
-            <li><span class="class-name">Biosystems Technology 1 HN</span> <span class="tag-honors">Honors</span></li>
-            <li><span class="class-name">Aerospace Science 3</span> <span class="tag-other">Other</span></li>
-          </ul>
-        </div>
-        <div class="subject-block">
-          <h3>Math</h3>
-          <ul class="class-list">
-            <li><span class="class-name">Algebra 1 HN</span> <span class="tag-honors">Honors</span></li>
-            <li><span class="class-name">Algebra 2</span> <span class="tag-other">Other</span></li>
-            <li><span class="class-name">Vector Calculus</span> <span class="tag-other">Other</span></li>
-          </ul>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes — STEM Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/classes.js"></script>
+  </head>
+  <body class="classes-view">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h1>STEM Planner</h1>
+        <p class="quick-info" id="student-name">Your course planner</p>
       </div>
-    </section>
-  </main>
-  </div>
-</body>
+      <nav>
+        <a href="index.html">Overview</a>
+        <a href="classes.html" class="active" aria-current="page">Classes</a>
+        <a href="suggestions.html">Suggestions</a>
+        <a href="requirements.html">Requirements</a>
+        <a href="qualitycredit.html">Quality Credit</a>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <main class="classes-page">
+        <div class="classes-heading">
+          <div>
+            <h2>Classes</h2>
+            <h3>Completed classes count toward credits and requirements. Choose a school year to track math years.</h3>
+          </div>
+          <p class="save-note">Selections are saved in this browser.</p>
+        </div>
+        <p id="class-message" role="status"></p>
+
+        <div class="classes-row">
+          <section class="card">
+            <div class="card-header">
+              <h2>Completed Courses</h2>
+              <span class="class-pill" id="completed-count">0</span>
+            </div>
+            <ul class="class-list" id="completed-classes"></ul>
+          </section>
+          <section class="card">
+            <div class="card-header">
+              <h2>Currently Enrolled</h2>
+              <span class="class-pill" id="enrolled-count">0</span>
+            </div>
+            <ul class="class-list" id="enrolled-classes"></ul>
+          </section>
+          <section class="card">
+            <div class="card-header">
+              <h2>Planned Classes</h2>
+              <span class="class-pill" id="planned-count">0</span>
+            </div>
+            <ul class="class-list" id="planned-classes"></ul>
+          </section>
+        </div>
+
+        <section class="card all-courses-card">
+          <div class="catalog-header">
+            <div>
+              <h2>All Courses</h2>
+              <p id="catalog-status" role="status">Choose a class to add to your list.</p>
+              <button type="button" class="course-button secondary-button" id="retry-catalog" hidden>Retry loading courses</button>
+            </div>
+            <div class="add-choice">
+              <label for="add-status">Add classes as</label>
+              <select id="add-status">
+                <option value="planned">Planned</option>
+                <option value="enrolled">Currently enrolled</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+          </div>
+          <div class="course-filters">
+            <div>
+              <label for="course-search">Search courses</label>
+              <input type="search" id="course-search" placeholder="Course name or subject">
+            </div>
+            <div>
+              <label for="subject-filter">Subject</label>
+              <select id="subject-filter"><option value="">All subjects</option></select>
+            </div>
+            <div>
+              <label for="level-filter">Level</label>
+              <select id="level-filter">
+                <option value="">All levels</option>
+                <option value="AP">AP</option>
+                <option value="Honors">Honors</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-options">
+            <label><input type="checkbox" id="available-only"> Hide classes already in my list</label>
+            <button type="button" class="course-button secondary-button" id="clear-filters">Clear filters</button>
+          </div>
+          <p id="course-results" role="status"></p>
+          <div class="courses-by-subject" id="course-catalog"></div>
+        </section>
+        <noscript>Enable JavaScript to select and save your classes.</noscript>
+      </main>
+    </div>
+  </body>
 </html>

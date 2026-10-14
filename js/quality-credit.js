@@ -1,30 +1,3 @@
-const courseSearch = document.querySelector("#course-search");
-
-if (courseSearch) {
-  const subjects = document.querySelectorAll(".subject-block");
-  const results = document.querySelector("#course-results");
-
-  courseSearch.addEventListener("input", function () {
-    const search = courseSearch.value.trim().toLowerCase();
-    let matches = 0;
-
-    subjects.forEach(function (subject) {
-      let visibleCourses = 0;
-
-      subject.querySelectorAll("li").forEach(function (course) {
-        const name = course.querySelector(".class-name").textContent.toLowerCase();
-        course.hidden = !name.includes(search);
-        if (!course.hidden) visibleCourses++;
-      });
-
-      subject.hidden = visibleCourses === 0;
-      matches += visibleCourses;
-    });
-
-    results.textContent = search ? matches + " courses found" : "";
-  });
-}
-
 document.querySelectorAll(".qc-card").forEach(function (card) {
   const reflection = card.querySelector(":scope > p");
   const button = card.querySelector(".qc-edit-button");
@@ -51,7 +24,7 @@ document.querySelectorAll(".qc-card").forEach(function (card) {
       badge.textContent = "Draft";
       badge.className = "qc-pill draft";
     }
-  } catch (error) {
+  } catch {
     message.textContent = "Browser storage is unavailable. Drafts won't be saved after you leave.";
   }
 
@@ -82,7 +55,7 @@ document.querySelectorAll(".qc-card").forEach(function (card) {
     try {
       localStorage.setItem(storageKey, reflection.textContent);
       message.textContent = "Draft saved in this browser.";
-    } catch (error) {
+    } catch {
       message.textContent = "Couldn't save in this browser. Copy your draft before leaving.";
     }
   });
